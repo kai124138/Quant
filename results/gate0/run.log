@@ -1,0 +1,61 @@
+AAPL: 384,329 events; anchors train=203,282, validation=58,581, test=85,792
+AAPL: fitting tau=0 events
+AAPL: fitting tau=1 events
+AAPL: fitting tau=2 events
+AAPL: fitting tau=4 events
+AAPL: fitting tau=8 events
+AAPL: fitting tau=16 events
+AAPL: fitting tau=32 events
+AAPL: fitting tau=64 events
+AAPL: direct ofi_logit at 10000 ns
+AAPL: direct ofi_logit at 1000000 ns
+AAPL: best=hgb, Delta=0.00813037 bits, CI=[0.006806000560621302, 0.01052442349658353]; elapsed=191.4s
+AMZN: 261,265 events; anchors train=143,626, validation=42,258, test=56,898
+AMZN: fitting tau=0 events
+AMZN: fitting tau=1 events
+AMZN: fitting tau=2 events
+AMZN: fitting tau=4 events
+AMZN: fitting tau=8 events
+AMZN: fitting tau=16 events
+AMZN: fitting tau=32 events
+AMZN: fitting tau=64 events
+AMZN: direct ofi_logit at 10000 ns
+AMZN: direct ofi_logit at 1000000 ns
+AMZN: best=ofi_logit, Delta=0.00466346 bits, CI=[0.0020655543341899616, 0.0069391471658048895]; elapsed=141.5s
+GOOG: 139,379 events; anchors train=76,910, validation=22,946, test=26,298
+GOOG: fitting tau=0 events
+GOOG: fitting tau=1 events
+GOOG: fitting tau=2 events
+GOOG: fitting tau=4 events
+GOOG: fitting tau=8 events
+GOOG: fitting tau=16 events
+GOOG: fitting tau=32 events
+GOOG: fitting tau=64 events
+GOOG: direct ofi_logit at 10000 ns
+GOOG: direct ofi_logit at 1000000 ns
+GOOG: best=hgb, Delta=0.00730596 bits, CI=[0.0019941820046019804, 0.008575612842936372]; elapsed=81.7s
+INTC: 558,154 events; anchors train=303,045, validation=60,865, test=110,735
+INTC: fitting tau=0 events
+INTC: fitting tau=1 events
+INTC: fitting tau=2 events
+INTC: fitting tau=4 events
+INTC: fitting tau=8 events
+INTC: fitting tau=16 events
+INTC: fitting tau=32 events
+INTC: fitting tau=64 events
+INTC: direct ofi_logit at 10000 ns
+INTC: direct ofi_logit at 1000000 ns
+INTC: best=qi_logit, Delta=0.01291462 bits, CI=[0.0084872117082769, 0.020437029043059652]; elapsed=228.0s
+MSFT: 611,562 events; anchors train=335,034, validation=76,591, test=128,378
+MSFT: fitting tau=0 events
+MSFT: fitting tau=1 events
+MSFT: fitting tau=2 events
+MSFT: fitting tau=4 events
+MSFT: fitting tau=8 events
+MSFT: fitting tau=16 events
+MSFT: fitting tau=32 events
+MSFT: fitting tau=64 events
+MSFT: direct ofi_logit at 10000 ns
+MSFT: direct ofi_logit at 1000000 ns
+MSFT: best=hgb, Delta=0.03007661 bits, CI=[0.023695139170256358, 0.03737567485671913]; elapsed=261.3s
+Gate 0 PASS: 5/5 tickers exclude zero

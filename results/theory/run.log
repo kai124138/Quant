@@ -1,0 +1,11 @@
+AAPL: trimmed rate=15.891553/s, p=0.154912, tau_c=5.941270 events
+MSFT: trimmed rate=24.775936/s, p=0.005656, tau_c=176.297181 events
+INTC: trimmed rate=21.760183/s, p=0.004524, tau_c=220.532553 events
+AMZN: trimmed rate=11.105068/s, p=0.097689, tau_c=9.727987 events
+GOOG: trimmed rate=5.777123/s, p=0.147679, tau_c=6.258152 events
+poisson_pgf: PASS
+hawkes_overdispersion: PASS
+overhead_cancellation: PASS
+crossover: PASS
+runtime_under_one_minute: PASS
+runtime_seconds=2.906; wrote results/theory/checks.json

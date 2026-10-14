@@ -1,0 +1,122 @@
+{
+  "started_utc": "2026-10-14T02:08:15.314626+00:00",
+  "cpu": "arm",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13 (main, Jun 23 2026, 15:44:24) [Clang 22.1.3 ]",
+  "reference_hardware": "i5-13600K / RTX 4060 Ti 8 GB (planned timing platform; no hardware timing here)",
+  "versions": {
+    "numpy": "2.5.4",
+    "polars": "2.0.0",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "argv": [
+    "scripts/run_gate0.py"
+  ],
+  "cwd": "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0",
+  "command": "MPLCONFIGDIR=.cache/mpl OMP_NUM_THREADS=1 .venv/bin/python scripts/run_gate0.py",
+  "configuration": {
+    "tickers": [
+      "AAPL",
+      "AMZN",
+      "GOOG",
+      "INTC",
+      "MSFT"
+    ],
+    "date": "2012-06-21",
+    "lookback_events": 50,
+    "ofi_preceding_book_guard_events": 1,
+    "book_levels": 10,
+    "tau_grid_events": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "latency_grid_ns": [
+      100,
+      1000,
+      10000,
+      50000,
+      100000,
+      250000,
+      500000,
+      1000000,
+      2000000,
+      5000000,
+      10000000
+    ],
+    "direct_check_latency_ns": [
+      10000,
+      1000000
+    ],
+    "splits_seconds_after_midnight": {
+      "train": [
+        35100,
+        48600
+      ],
+      "validation": [
+        48600,
+        52800
+      ],
+      "test": [
+        52800,
+        57000
+      ]
+    },
+    "tick_dollars": 0.01,
+    "price_units_per_dollar": 10000,
+    "hgb_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "logit_seed": 0,
+    "hgb_max_iter_candidates": [
+      50,
+      100,
+      200,
+      400
+    ],
+    "hgb_learning_rate": 0.1,
+    "hgb_early_stopping": false,
+    "hgb_max_leaf_nodes": 31,
+    "hgb_min_samples_leaf": 20,
+    "hgb_l2_regularization": 0.0,
+    "logit_C": 1.0,
+    "logit_max_iter": 1000,
+    "temperature_log_bounds": [
+      -8.0,
+      8.0
+    ],
+    "temperature_xatol": 1e-08,
+    "bootstrap_seed": 0,
+    "bootstrap_resamples": 1000,
+    "bootstrap_block_seconds": 300,
+    "ci_percentiles": [
+      2.5,
+      97.5
+    ],
+    "threads": 1,
+    "classification_threshold": 0.5,
+    "gate_required_significant_tickers": 2
+  },
+  "source_sha256": {
+    "scripts/run_gate0.py": "2455d82caceb2dc674bfdb2fd54f3e165f05b430c206461c2d12c63b9420e8b8",
+    "src/lob_latency/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/lob_latency/events.py": "2483512e618bf022b5f9b1ff7810778ed56ae87db57ab8c61b17920fc0b481a3",
+    "src/lob_latency/features.py": "f66223288c67154a941d9d6f07f47eb61fa50061a23caff7da651c349f8fdb82",
+    "src/lob_latency/io_lobster.py": "22ed39ad9b338ada270657364d0c9b8e3bb7649829e107dc7269c8a824371077",
+    "src/lob_latency/labels.py": "a3791fa849d8bd192b89bd262eb1eb5579dab53271f07e4a7669b487606061e2",
+    "src/lob_latency/latency.py": "839b4dd0a820c768a2451713d4ef41ac7949e31ab83cc11c68fcd697e4ce8938",
+    "src/lob_latency/metrics.py": "3cf704b2533da50f2f49d9732094e85184ebf88babe1355089ca04349c217b74",
+    "src/lob_latency/models.py": "affe5fc5803cbbaff4f8b30a6fef3e1cfbf7ab8ff7c8802a856efff5445972cc"
+  }
+}

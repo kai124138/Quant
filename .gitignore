@@ -27,3 +27,7 @@ ssh-docs/
 
 # OS
 .DS_Store
+
+# Worktrees and local caches
+.claude/worktrees/
+.cache/

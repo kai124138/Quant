@@ -1,0 +1,91 @@
+{
+  "verdict": "PASS",
+  "significant_tickers": 5,
+  "required_significant_tickers": 2,
+  "required_tickers": [
+    "AAPL",
+    "AMZN",
+    "GOOG",
+    "INTC",
+    "MSFT"
+  ],
+  "completed_tickers": [
+    "AAPL",
+    "AMZN",
+    "GOOG",
+    "INTC",
+    "MSFT"
+  ],
+  "primary": {
+    "AAPL": {
+      "best_model": "hgb",
+      "validation_S0_bits": {
+        "qi_logit": 0.012243721870983215,
+        "ofi_logit": 0.03212899360036414,
+        "hgb": 0.03397970577565594
+      },
+      "delta_bits": 0.008130373214279889,
+      "delta_ci95_bits": [
+        0.006806000560621302,
+        0.01052442349658353
+      ],
+      "ci_excludes_zero": true
+    },
+    "AMZN": {
+      "best_model": "ofi_logit",
+      "validation_S0_bits": {
+        "qi_logit": 0.015667373020559205,
+        "ofi_logit": 0.04251437899827559,
+        "hgb": 0.03715993619310021
+      },
+      "delta_bits": 0.004663458226999692,
+      "delta_ci95_bits": [
+        0.0020655543341899616,
+        0.0069391471658048895
+      ],
+      "ci_excludes_zero": true
+    },
+    "GOOG": {
+      "best_model": "hgb",
+      "validation_S0_bits": {
+        "qi_logit": 0.010859959381530615,
+        "ofi_logit": 0.0363714056329818,
+        "hgb": 0.04491108837098001
+      },
+      "delta_bits": 0.007305961793632285,
+      "delta_ci95_bits": [
+        0.0019941820046019804,
+        0.008575612842936372
+      ],
+      "ci_excludes_zero": true
+    },
+    "INTC": {
+      "best_model": "qi_logit",
+      "validation_S0_bits": {
+        "qi_logit": 0.07435385718283538,
+        "ofi_logit": 0.06870817138933605,
+        "hgb": 0.06526930637098131
+      },
+      "delta_bits": 0.012914621620728955,
+      "delta_ci95_bits": [
+        0.0084872117082769,
+        0.020437029043059652
+      ],
+      "ci_excludes_zero": true
+    },
+    "MSFT": {
+      "best_model": "hgb",
+      "validation_S0_bits": {
+        "qi_logit": 0.08764385244755968,
+        "ofi_logit": 0.09842536188399276,
+        "hgb": 0.10538812694854931
+      },
+      "delta_bits": 0.030076611031128297,
+      "delta_ci95_bits": [
+        0.023695139170256358,
+        0.03737567485671913
+      ],
+      "ci_excludes_zero": true
+    }
+  }
+}

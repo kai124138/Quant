@@ -1,0 +1,26 @@
+Matplotlib is building the font cache; this may take a moment.
+AAPL: 384,329 events; anchors train=203,282, validation=58,581, test=85,792
+AAPL: fitting tau=0 events
+AAPL: fitting tau=1 events
+AAPL: fitting tau=2 events
+AAPL: fitting tau=4 events
+AAPL: fitting tau=8 events
+AAPL: fitting tau=16 events
+AAPL: fitting tau=32 events
+AAPL: fitting tau=64 events
+AAPL: direct ofi_logit at 10000 ns
+AAPL: direct ofi_logit at 1000000 ns
+AAPL: best=hgb, Delta=0.00813037 bits, CI=[0.006806000560621302, 0.01052442349658353]; elapsed=189.4s
+Traceback (most recent call last):
+  File "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/scripts/run_gate0.py", line 464, in <module>
+    
+  File "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/scripts/run_gate0.py", line 456, in main
+    write_json(output / "manifest.json", manifest)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/scripts/run_gate0.py", line 79, in run_ticker
+    data = load_lobster(message_path, book_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/src/lob_latency/io_lobster.py", line 34, in load_lobster
+    # Some sample rows have decimal serialization tails below one ns.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Timestamp precision exceeds integer nanoseconds
