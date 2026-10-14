@@ -1,0 +1,29 @@
+# Data never goes in git (raw feeds, parsed books, arrays)
+data/
+*.gz
+*.zip
+*.zst
+*.parquet
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Model checkpoints and synthesis outputs
+checkpoints/
+*.pt
+*.keras
+hls_prj*/
+*_prj/
+
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Machine-specific notes (hostnames, IPs, usernames) stay local
+ssh-docs/
+
+# OS
+.DS_Store
