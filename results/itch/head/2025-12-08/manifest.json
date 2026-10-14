@@ -1,0 +1,1222 @@
+{
+  "input_path": "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/data/raw/itch_head/S120825_head64MB.gz",
+  "input_size_bytes": 67108864,
+  "sha256_first_64_mib": "12892d2b9cbb84caa7b976274486c6875b595b2ea8efa2618043224542758568",
+  "sha256_bytes": 67108864,
+  "date": "2025-12-08",
+  "weekday": "Monday",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "TSLA",
+    "AVGO",
+    "COST",
+    "NFLX",
+    "AMD",
+    "INTC",
+    "CSCO",
+    "CMCSA",
+    "PEP",
+    "QCOM",
+    "SBUX",
+    "PYPL",
+    "MU",
+    "WBD"
+  ],
+  "completed_utc": "2026-10-14T19:31:30.398381+00:00",
+  "command": "MPLCONFIGDIR=.cache/mpl /Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/.venv/bin/python scripts/itch_to_lobster.py --input data/raw/itch_head/S120825_head64MB.gz --symbols AAPL MSFT NVDA AMZN GOOGL META TSLA AVGO COST NFLX AMD INTC CSCO CMCSA PEP QCOM SBUX PYPL MU WBD --out results/itch/head",
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "platform": "macOS-26.5-arm64-arm-64bit",
+    "python": "3.12.13"
+  },
+  "source_sha256": {
+    "scripts/itch_to_lobster.py": "32c835634b1944ab6e9ad4ebda8f151aad922623eecc186d8a386a9d845f640e",
+    "tools/itch_filter.c": "c583e9efd6f8764ffef0c8df26b510e998c7ae8ad81c33223098a5b684c4a02b",
+    "src/lob_latency/itch.py": "c290c9b41e59a682ba72701b54ef7009c0b1668586abbe44181bbfe95d722c4c",
+    "src/lob_latency/io_lobster.py": "2e758d3629baf6472371997f5bca08e98ec3dea7164e21a185162cefec3591b0"
+  },
+  "seed": null,
+  "filter": {
+    "counts": {
+      "bytes_read": 164495360,
+      "total_messages": 5496895,
+      "input_ended_mid_message": true,
+      "counts_by_type": {
+        "A": 2429552,
+        "D": 2244347,
+        "E": 52799,
+        "H": 12093,
+        "L": 271181,
+        "P": 35999,
+        "R": 12102,
+        "S": 2,
+        "U": 191061,
+        "X": 235666,
+        "Y": 12093
+      },
+      "first_timestamp_ns": 10889045483778,
+      "last_timestamp_ns": 19477367957042,
+      "symbols": {
+        "AAPL": {
+          "records": 5963,
+          "counts_by_type": {
+            "A": 3973,
+            "D": 1371,
+            "E": 124,
+            "H": 1,
+            "L": 48,
+            "P": 170,
+            "R": 1,
+            "U": 314,
+            "X": 10,
+            "Y": 1
+          }
+        },
+        "MSFT": {
+          "records": 3308,
+          "counts_by_type": {
+            "A": 1560,
+            "D": 1219,
+            "E": 65,
+            "H": 1,
+            "L": 46,
+            "P": 62,
+            "R": 1,
+            "U": 388,
+            "X": 13,
+            "Y": 1
+          }
+        },
+        "NVDA": {
+          "records": 27842,
+          "counts_by_type": {
+            "A": 18762,
+            "D": 5850,
+            "E": 1066,
+            "H": 1,
+            "L": 46,
+            "P": 411,
+            "R": 1,
+            "U": 1673,
+            "X": 79,
+            "Y": 1
+          }
+        },
+        "AMZN": {
+          "records": 7053,
+          "counts_by_type": {
+            "A": 5757,
+            "D": 739,
+            "E": 113,
+            "H": 1,
+            "L": 47,
+            "P": 154,
+            "R": 1,
+            "U": 271,
+            "X": 18,
+            "Y": 1
+          }
+        },
+        "GOOGL": {
+          "records": 7262,
+          "counts_by_type": {
+            "A": 4261,
+            "D": 1837,
+            "E": 433,
+            "H": 1,
+            "L": 47,
+            "P": 339,
+            "R": 1,
+            "U": 348,
+            "X": 43,
+            "Y": 1
+          }
+        },
+        "META": {
+          "records": 3737,
+          "counts_by_type": {
+            "A": 1722,
+            "D": 1300,
+            "E": 171,
+            "H": 1,
+            "L": 49,
+            "P": 112,
+            "R": 1,
+            "U": 415,
+            "X": 16,
+            "Y": 1
+          }
+        },
+        "TSLA": {
+          "records": 28663,
+          "counts_by_type": {
+            "A": 15831,
+            "D": 7508,
+            "E": 1143,
+            "H": 1,
+            "L": 44,
+            "P": 951,
+            "R": 1,
+            "U": 2543,
+            "X": 686,
+            "Y": 1
+          }
+        },
+        "AVGO": {
+          "records": 5217,
+          "counts_by_type": {
+            "A": 2522,
+            "D": 2226,
+            "E": 169,
+            "H": 1,
+            "L": 42,
+            "P": 223,
+            "R": 1,
+            "U": 1,
+            "X": 75,
+            "Y": 1
+          }
+        },
+        "COST": {
+          "records": 143,
+          "counts_by_type": {
+            "A": 91,
+            "D": 39,
+            "E": 3,
+            "H": 1,
+            "L": 47,
+            "P": 9,
+            "R": 1,
+            "Y": 1
+          }
+        },
+        "NFLX": {
+          "records": 6929,
+          "counts_by_type": {
+            "A": 2928,
+            "D": 2409,
+            "E": 304,
+            "H": 1,
+            "L": 47,
+            "P": 284,
+            "R": 1,
+            "U": 938,
+            "X": 65,
+            "Y": 1
+          }
+        },
+        "AMD": {
+          "records": 7047,
+          "counts_by_type": {
+            "A": 4459,
+            "D": 1765,
+            "E": 214,
+            "H": 1,
+            "L": 47,
+            "P": 198,
+            "R": 1,
+            "U": 366,
+            "X": 44,
+            "Y": 1
+          }
+        },
+        "INTC": {
+          "records": 3847,
+          "counts_by_type": {
+            "A": 1747,
+            "D": 1432,
+            "E": 104,
+            "H": 1,
+            "L": 47,
+            "P": 40,
+            "R": 1,
+            "U": 490,
+            "X": 33,
+            "Y": 1
+          }
+        },
+        "CSCO": {
+          "records": 3585,
+          "counts_by_type": {
+            "A": 1098,
+            "D": 1060,
+            "E": 32,
+            "H": 1,
+            "L": 47,
+            "P": 15,
+            "R": 1,
+            "U": 1379,
+            "Y": 1
+          }
+        },
+        "CMCSA": {
+          "records": 636,
+          "counts_by_type": {
+            "A": 263,
+            "D": 232,
+            "E": 1,
+            "H": 1,
+            "L": 47,
+            "P": 3,
+            "R": 1,
+            "U": 136,
+            "Y": 1
+          }
+        },
+        "PEP": {
+          "records": 1552,
+          "counts_by_type": {
+            "A": 511,
+            "D": 465,
+            "E": 23,
+            "H": 1,
+            "L": 38,
+            "P": 5,
+            "R": 1,
+            "U": 547,
+            "Y": 1
+          }
+        },
+        "QCOM": {
+          "records": 1297,
+          "counts_by_type": {
+            "A": 435,
+            "D": 317,
+            "E": 17,
+            "H": 1,
+            "L": 45,
+            "P": 24,
+            "R": 1,
+            "U": 474,
+            "X": 29,
+            "Y": 1
+          }
+        },
+        "SBUX": {
+          "records": 590,
+          "counts_by_type": {
+            "A": 204,
+            "D": 147,
+            "H": 1,
+            "L": 46,
+            "P": 2,
+            "R": 1,
+            "U": 236,
+            "Y": 1
+          }
+        },
+        "PYPL": {
+          "records": 1485,
+          "counts_by_type": {
+            "A": 661,
+            "D": 487,
+            "E": 9,
+            "H": 1,
+            "L": 45,
+            "P": 17,
+            "R": 1,
+            "U": 302,
+            "X": 8,
+            "Y": 1
+          }
+        },
+        "MU": {
+          "records": 7600,
+          "counts_by_type": {
+            "A": 3781,
+            "D": 2480,
+            "E": 184,
+            "H": 1,
+            "L": 48,
+            "P": 228,
+            "R": 1,
+            "U": 859,
+            "X": 67,
+            "Y": 1
+          }
+        },
+        "WBD": {
+          "records": 2510,
+          "counts_by_type": {
+            "A": 997,
+            "D": 883,
+            "E": 128,
+            "H": 1,
+            "L": 43,
+            "P": 44,
+            "R": 1,
+            "U": 452,
+            "X": 5,
+            "Y": 1
+          }
+        }
+      }
+    },
+    "elapsed_seconds": 0.19727870800124947,
+    "messages_per_second": 27863599.95811198,
+    "gzip_returncode": 1,
+    "gzip_truncated": true,
+    "gzip_stderr": "gzip: /Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/data/raw/itch_head/S120825_head64MB.gz: unexpected end of file\ngzip: /Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/data/raw/itch_head/S120825_head64MB.gz: uncompress failed",
+    "filter_stderr": "filter: 5496895 complete messages, 164495360 bytes, truncated=1"
+  },
+  "integrity": {
+    "AAPL": {
+      "symbol": "AAPL",
+      "input_records": 5963,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11105932492279,
+      "last_timestamp_ns": 19461749323971,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 2522,
+      "elapsed_seconds": 0.0306914999964647,
+      "messages_per_second": 194288.32089297907,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "MSFT": {
+      "symbol": "MSFT",
+      "input_records": 3308,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106345194229,
+      "last_timestamp_ns": 19467711904536,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 302,
+      "elapsed_seconds": 0.012756290998368058,
+      "messages_per_second": 259323.0273927743,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "NVDA": {
+      "symbol": "NVDA",
+      "input_records": 27842,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106353498758,
+      "last_timestamp_ns": 19475315453731,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 12259,
+      "elapsed_seconds": 0.06887920800363645,
+      "messages_per_second": 404214.8684190749,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "AMZN": {
+      "symbol": "AMZN",
+      "input_records": 7053,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106048412763,
+      "last_timestamp_ns": 19453027606110,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 4944,
+      "elapsed_seconds": 0.01986512499570381,
+      "messages_per_second": 355044.3302785831,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "GOOGL": {
+      "symbol": "GOOGL",
+      "input_records": 7262,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106299773412,
+      "last_timestamp_ns": 19475439845903,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 2191,
+      "elapsed_seconds": 0.021062874999188352,
+      "messages_per_second": 344777.2443353454,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "META": {
+      "symbol": "META",
+      "input_records": 3737,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106340785539,
+      "last_timestamp_ns": 19475686748221,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 339,
+      "elapsed_seconds": 0.013017666999076027,
+      "messages_per_second": 287071.4084378749,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "TSLA": {
+      "symbol": "TSLA",
+      "input_records": 28663,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106402391755,
+      "last_timestamp_ns": 19477048234106,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 7607,
+      "elapsed_seconds": 0.07158837500173831,
+      "messages_per_second": 400386.2358840245,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "AVGO": {
+      "symbol": "AVGO",
+      "input_records": 5217,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106064545427,
+      "last_timestamp_ns": 19476934239728,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 214,
+      "elapsed_seconds": 0.015986375001375563,
+      "messages_per_second": 326340.39921815286,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "COST": {
+      "symbol": "COST",
+      "input_records": 143,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106207013369,
+      "last_timestamp_ns": 18689172386931,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 50,
+      "elapsed_seconds": 0.005689833000360522,
+      "messages_per_second": 25132.547825382422,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "NFLX": {
+      "symbol": "NFLX",
+      "input_records": 6929,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106349577381,
+      "last_timestamp_ns": 19474061063742,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 334,
+      "elapsed_seconds": 0.02079875000345055,
+      "messages_per_second": 333145.0206791498,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "AMD": {
+      "symbol": "AMD",
+      "input_records": 7047,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106045811124,
+      "last_timestamp_ns": 19466148591256,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 2635,
+      "elapsed_seconds": 0.020295499998610467,
+      "messages_per_second": 347219.827079031,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "INTC": {
+      "symbol": "INTC",
+      "input_records": 3847,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106315849320,
+      "last_timestamp_ns": 19475473748264,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 255,
+      "elapsed_seconds": 0.013200749999668915,
+      "messages_per_second": 291422.83583103126,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "CSCO": {
+      "symbol": "CSCO",
+      "input_records": 3585,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106214249904,
+      "last_timestamp_ns": 19475328456805,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 35,
+      "elapsed_seconds": 0.014105540998571087,
+      "messages_per_second": 254155.44149374816,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "CMCSA": {
+      "symbol": "CMCSA",
+      "input_records": 636,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106195733447,
+      "last_timestamp_ns": 19275842425011,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 30,
+      "elapsed_seconds": 0.005911999993259087,
+      "messages_per_second": 107577.80797110498,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "PEP": {
+      "symbol": "PEP",
+      "input_records": 1552,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106362237219,
+      "last_timestamp_ns": 19452034458512,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 45,
+      "elapsed_seconds": 0.00780829200084554,
+      "messages_per_second": 198763.05853212686,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "QCOM": {
+      "symbol": "QCOM",
+      "input_records": 1297,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106370598944,
+      "last_timestamp_ns": 19470609246387,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 113,
+      "elapsed_seconds": 0.008807375001197215,
+      "messages_per_second": 147262.94722589813,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "SBUX": {
+      "symbol": "SBUX",
+      "input_records": 590,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106382623147,
+      "last_timestamp_ns": 19330658086074,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 57,
+      "elapsed_seconds": 0.0054866670034243725,
+      "messages_per_second": 107533.40773766032,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "PYPL": {
+      "symbol": "PYPL",
+      "input_records": 1485,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106370034438,
+      "last_timestamp_ns": 19475271571872,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 168,
+      "elapsed_seconds": 0.007957499998155981,
+      "messages_per_second": 186616.39966624242,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "MU": {
+      "symbol": "MU",
+      "input_records": 7600,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106346251632,
+      "last_timestamp_ns": 19475315586934,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 1196,
+      "elapsed_seconds": 0.022426916999393143,
+      "messages_per_second": 338878.5003398216,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    },
+    "WBD": {
+      "symbol": "WBD",
+      "input_records": 2510,
+      "emitted_rows": 0,
+      "lobster_counts_by_type": {},
+      "first_timestamp_ns": 11106412041068,
+      "last_timestamp_ns": 19475316305594,
+      "observation_end_ns": 19477367957042,
+      "unknown_order_refs": 0,
+      "unknown_order_refs_by_type": {},
+      "negative_shares": 0,
+      "duplicate_order_refs": 0,
+      "crossed": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "crossed_or_locked": {
+        "count": 0,
+        "intervals": 0,
+        "longest_duration_ns": 0,
+        "total_duration_ns": 0
+      },
+      "final_open_order_count": 79,
+      "elapsed_seconds": 0.010601999994833022,
+      "messages_per_second": 236747.78355246846,
+      "configuration": {
+        "seed": null,
+        "batch_rows": 50000,
+        "record_bytes": 40,
+        "book_levels": 10,
+        "session_start_ns": 34200000000000,
+        "session_end_ns": 57600000000000
+      }
+    }
+  },
+  "complete_input": false,
+  "rebuild_seconds": 0.3969385409873212,
+  "rebuild_messages": 126266,
+  "rebuild_messages_per_second": 318099.622389737,
+  "timing_model": {
+    "filter_seconds_per_billion_input_messages": 35.8891170381187,
+    "rebuild_seconds_per_million_selected_messages": 3.1436692457773368,
+    "includes_regular_session_parquet_writes": false,
+    "full_day_extrapolation_verified": false
+  },
+  "elapsed_seconds": 0.6519199169997592,
+  "keep_bin": false
+}

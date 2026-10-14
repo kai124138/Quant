@@ -1,0 +1,33 @@
+{
+  "command": "MPLCONFIGDIR=.cache/mpl scripts/symbol_stats.py --input results/itch/head --out results/itch",
+  "input_paths": [
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/AAPL_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/AMD_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/AMZN_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/AVGO_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/CMCSA_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/COST_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/CSCO_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/GOOGL_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/INTC_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/META_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/MSFT_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/MU_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/NFLX_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/NVDA_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/PEP_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/PYPL_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/QCOM_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/SBUX_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/TSLA_message_10.parquet",
+    "/Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/WBD_message_10.parquet"
+  ],
+  "symbol_days": 20,
+  "seed": null,
+  "start_seconds": 35100,
+  "end_seconds_exclusive": 57000,
+  "tick_dollars": 0.01,
+  "large_max_spread_ticks": 1.5,
+  "small_min_spread_ticks": 3.0,
+  "source_venue": "Nasdaq only; not consolidated NBBO"
+}

@@ -1,0 +1,45 @@
+Filtering S120825_head64MB.gz: AAPL, MSFT, NVDA, AMZN, GOOGL, META, TSLA, AVGO, COST, NFLX, AMD, INTC, CSCO, CMCSA, PEP, QCOM, SBUX, PYPL, MU, WBD
+filter: 5496895 complete messages, 164495360 bytes, truncated=1
+Accepted truncated gzip prefix: gzip: /Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/data/raw/itch_head/S120825_head64MB.gz: unexpected end of file
+gzip: /Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/data/raw/itch_head/S120825_head64MB.gz: uncompress failed
+Rebuilding AAPL (5963 records)
+  0 session rows, 0.031 s
+Rebuilding MSFT (3308 records)
+  0 session rows, 0.013 s
+Rebuilding NVDA (27842 records)
+  0 session rows, 0.069 s
+Rebuilding AMZN (7053 records)
+  0 session rows, 0.020 s
+Rebuilding GOOGL (7262 records)
+  0 session rows, 0.021 s
+Rebuilding META (3737 records)
+  0 session rows, 0.013 s
+Rebuilding TSLA (28663 records)
+  0 session rows, 0.072 s
+Rebuilding AVGO (5217 records)
+  0 session rows, 0.016 s
+Rebuilding COST (143 records)
+  0 session rows, 0.006 s
+Rebuilding NFLX (6929 records)
+  0 session rows, 0.021 s
+Rebuilding AMD (7047 records)
+  0 session rows, 0.020 s
+Rebuilding INTC (3847 records)
+  0 session rows, 0.013 s
+Rebuilding CSCO (3585 records)
+  0 session rows, 0.014 s
+Rebuilding CMCSA (636 records)
+  0 session rows, 0.006 s
+Rebuilding PEP (1552 records)
+  0 session rows, 0.008 s
+Rebuilding QCOM (1297 records)
+  0 session rows, 0.009 s
+Rebuilding SBUX (590 records)
+  0 session rows, 0.005 s
+Rebuilding PYPL (1485 records)
+  0 session rows, 0.008 s
+Rebuilding MU (7600 records)
+  0 session rows, 0.022 s
+Rebuilding WBD (2510 records)
+  0 session rows, 0.011 s
+Wrote /Users/kaiyamaguchi/Desktop/Quant/.claude/worktrees/gate0/results/itch/head/2025-12-08/manifest.json (0.652 s total)

@@ -1,0 +1,42 @@
+{
+  "symbol": "META",
+  "input_records": 3737,
+  "emitted_rows": 0,
+  "lobster_counts_by_type": {},
+  "first_timestamp_ns": 11106340785539,
+  "last_timestamp_ns": 19475686748221,
+  "observation_end_ns": 19477367957042,
+  "unknown_order_refs": 0,
+  "unknown_order_refs_by_type": {},
+  "negative_shares": 0,
+  "duplicate_order_refs": 0,
+  "crossed": {
+    "count": 0,
+    "intervals": 0,
+    "longest_duration_ns": 0,
+    "total_duration_ns": 0
+  },
+  "locked": {
+    "count": 0,
+    "intervals": 0,
+    "longest_duration_ns": 0,
+    "total_duration_ns": 0
+  },
+  "crossed_or_locked": {
+    "count": 0,
+    "intervals": 0,
+    "longest_duration_ns": 0,
+    "total_duration_ns": 0
+  },
+  "final_open_order_count": 339,
+  "elapsed_seconds": 0.013017666999076027,
+  "messages_per_second": 287071.4084378749,
+  "configuration": {
+    "seed": null,
+    "batch_rows": 50000,
+    "record_bytes": 40,
+    "book_levels": 10,
+    "session_start_ns": 34200000000000,
+    "session_end_ns": 57600000000000
+  }
+}

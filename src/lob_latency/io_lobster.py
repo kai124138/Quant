@@ -21,11 +21,22 @@ class LobsterData:
 
 
 def load_lobster(message_path: str | Path, book_path: str | Path) -> LobsterData:
-    """Keep message types 1--6, dropping the corresponding halt book rows."""
-    messages = pl.read_csv(message_path, has_header=False,
-                           new_columns=["time", "type", "order_id", "size", "price", "direction"],
-                           schema_overrides={"time": pl.String})
-    books = pl.read_csv(book_path, has_header=False).to_numpy().astype(np.int64)
+    """Read CSV or exact-second Parquet; keep types 1--6 and drop paired halts."""
+    if Path(message_path).suffix == ".parquet":
+        messages = pl.read_parquet(message_path)
+        if messages.width != 6:
+            raise ValueError("Expected six-column messages")
+        messages.columns = ["time", "type", "order_id", "size", "price", "direction"]
+        if messages["time"].dtype.is_float():
+            raise ValueError("Parquet times must be exact decimal or string seconds")
+        messages = messages.with_columns(pl.col("time").cast(pl.String))
+    else:
+        messages = pl.read_csv(message_path, has_header=False,
+                               new_columns=["time", "type", "order_id", "size", "price", "direction"],
+                               schema_overrides={"time": pl.String, "order_id": pl.UInt64})
+    book_frame = (pl.read_parquet(book_path) if Path(book_path).suffix == ".parquet"
+                  else pl.read_csv(book_path, has_header=False))
+    books = book_frame.to_numpy().astype(np.int64)
     if messages.width != 6 or books.shape != (messages.height, 40):
         raise ValueError("Expected aligned six-column messages and ten-level books")
     parts = messages["time"].str.split_exact(".", 1)
@@ -40,9 +51,9 @@ def load_lobster(message_path: str | Path, book_path: str | Path) -> LobsterData
     times = seconds * 1_000_000_000 + nanos
     if np.any(np.diff(times) < 0):
         raise ValueError("Messages must be chronological")
-    types = messages["type"].to_numpy()
+    types = messages["type"].cast(pl.Int64).to_numpy()
     if not np.isin(types, np.arange(1, 8)).all():
         raise ValueError("Unknown message type")
     keep = types != 7
-    return LobsterData(times[keep], types[keep], messages["direction"].to_numpy()[keep],
+    return LobsterData(times[keep], types[keep], messages["direction"].cast(pl.Int64).to_numpy()[keep],
                        books[keep], len(times), int(np.sum(~keep)), int(extra_precision.sum()))

@@ -1,0 +1,19 @@
+{
+  "git diff --check": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "git diff --exit-code -- results/gate0 docs/theory.md": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "conversion_source_hashes_match": true,
+  "historical_loader": {
+    "revision": "6a2c3aa",
+    "command": "git show 6a2c3aa:src/lob_latency/io_lobster.py",
+    "sha256": "a79eb358af2d99f01e44c0ce32a253883e747a00e47e1853086a68b4fafb654d",
+    "matches_research_manifest": true
+  }
+}
