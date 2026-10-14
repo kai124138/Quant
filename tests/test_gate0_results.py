@@ -135,11 +135,11 @@ def test_completed_gate_verdict_and_source_manifest():
     assert summary["verdict"] == ("PASS" if significant >= 2 else "FAIL")
     for relative, expected in manifest["source_sha256"].items():
         source = (ROOT / relative).read_bytes()
-        if relative == "src/lob_latency/io_lobster.py":
-            # Gate 0 records the historical CSV loader. Parquet support changes its
-            # source bytes; verify the recorded version rather than rewriting results.
-            # Current CSV/Parquet behavior is exercised independently in test_itch.py.
+        if relative in ("src/lob_latency/io_lobster.py", "scripts/run_gate0.py"):
+            # Preserve the recorded historical sources. Parquet loading and the
+            # shared Gate fitter are tested separately, including a numeric
+            # replay against the frozen Gate 0 metrics, without rewriting them.
             source = subprocess.run(
-                ["git", "show", "6a2c3aa:src/lob_latency/io_lobster.py"],
+                ["git", "show", f"6a2c3aa:{relative}"],
                 cwd=ROOT, capture_output=True, check=True).stdout
         assert hashlib.sha256(source).hexdigest() == expected

@@ -23,7 +23,8 @@ from lob_latency.io_lobster import LobsterData, load_lobster
 
 def symbol_day_statistics(data: LobsterData, symbol: str, day: str, *,
                           start_seconds: int = 35_100, end_seconds: int = 57_000,
-                          observation_end_ns: int | None = None) -> dict:
+                          observation_end_ns: int | None = None,
+                          integrity: dict | None = None) -> dict:
     """Measure event averages and observed-time one-tick share, using one-cent ticks.
 
     Apply the research session trim before counting events; merge equal ns times
@@ -41,13 +42,16 @@ def symbol_day_statistics(data: LobsterData, symbol: str, day: str, *,
               "mean_inter_event_gap_seconds": None, "median_inter_event_gap_seconds": None,
               "mid_changes_per_event": None, "mean_spread_ticks": None,
               "one_tick_time_share": None, "mean_mid_price_dollars": None,
-              "observed_book_seconds": 0.0, "tick_size_class": "unclassified"}
+              "observed_book_seconds": 0.0, "tick_size_class": "unclassified",
+              "event_rate_hz": 0.0, "crossed_locked_session_share": 0.0,
+              "unknown_order_refs": None if integrity is None else integrity.get("unknown_order_refs")}
     if not len(data.time_ns):
         return result
     events = merge_events(data)
     inside = (events.time_ns >= start) & (events.time_ns < stop)
     n_events = int(inside.sum())
     result["merged_events"] = n_events
+    result["event_rate_hz"] = n_events / (end_seconds - start_seconds)
     gaps = np.diff(events.time_ns[inside]) / 10**9
     if len(gaps):
         result["mean_inter_event_gap_seconds"] = float(gaps.mean())
@@ -73,6 +77,8 @@ def symbol_day_statistics(data: LobsterData, symbol: str, day: str, *,
         raise ValueError("Observation end precedes last event")
     interval_ends = np.r_[events.time_ns[1:], observed_stop]
     durations = np.maximum(0, np.minimum(interval_ends, stop) - np.maximum(events.time_ns, start))
+    result["crossed_locked_session_share"] = float(
+        durations[events.valid_mid & (spread <= 0)].sum() / (stop - start))
     weights = np.where(valid, durations, 0)
     total = int(weights.sum())
     result["observed_book_seconds"] = total / 10**9
@@ -103,9 +109,14 @@ def main() -> None:
         book = message.with_name(f"{symbol}_orderbook_10.parquet")
         manifest_path = message.parent / "manifest.json"
         manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+        integrity = manifest.get("integrity", {}).get(symbol)
+        integrity_path = message.with_name(f"{symbol}_integrity.json")
+        if integrity is None and integrity_path.exists():
+            integrity = json.loads(integrity_path.read_text())
         data = load_lobster(message, book)
         rows.append(symbol_day_statistics(data, symbol, message.parent.name,
-                    observation_end_ns=manifest.get("filter", {}).get("counts", {}).get("last_timestamp_ns")))
+                    observation_end_ns=manifest.get("filter", {}).get("counts", {}).get("last_timestamp_ns"),
+                    integrity=integrity))
     args.out.mkdir(parents=True, exist_ok=True)
     # Provide explicit types even when every sample-day metric is undefined.
     schema = {key: (pl.String if isinstance(value, str) else
@@ -118,7 +129,8 @@ def main() -> None:
                 "symbol_days": len(rows), "seed": None,
                 "start_seconds": 35_100, "end_seconds_exclusive": 57_000,
                 "tick_dollars": 0.01, "large_max_spread_ticks": 1.5,
-                "small_min_spread_ticks": 3.0,
+              "small_min_spread_ticks": 3.0,
+              "integrity_definition": "Crossed/locked time divided by trimmed session seconds; unknown refs from reconstruction",
                 "source_venue": "Nasdaq only; not consolidated NBBO"}
     (args.out / "symbol_stats_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     columns = list(schema)

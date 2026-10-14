@@ -31,6 +31,7 @@ import sklearn
 from threadpoolctl import threadpool_limits
 
 from lob_latency.events import merge_events
+from lob_latency.experiment import curve_statistics, fit_grid, latency_statistics
 from lob_latency.features import FEATURE_NAMES, make_features, standardize
 from lob_latency.io_lobster import load_lobster
 from lob_latency.labels import (SPLITS, TAU_GRID, action_mask, delayed_labels,
@@ -51,24 +52,6 @@ def write_json(path: Path, value: dict) -> None:
     """Strict JSON: undefined quantities use null, never NaN or Infinity."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
-
-
-def curve_statistics(point: np.ndarray, boot: np.ndarray) -> dict:
-    """Skill/difference intervals from the same bootstrap draws, in bits."""
-    return {"S_bits": point.tolist(),
-            "S_ci95_bits": [interval(boot[:, j]) for j in range(len(point))],
-            "S_zero_minus_tau_bits": (point[0] - point).tolist(),
-            "S_zero_minus_tau_ci95_bits": [interval(boot[:, 0] - boot[:, j])
-                                           for j in range(len(point))]}
-
-
-def latency_statistics(point: np.ndarray, boot: np.ndarray) -> dict:
-    """Latency-adjusted skill and loss relative to the first latency, in bits."""
-    return {"A_bits": point.tolist(),
-            "A_ci95_bits": [interval(boot[:, j]) for j in range(len(point))],
-            "A_fast_minus_L_bits": (point[0] - point).tolist(),
-            "A_fast_minus_L_ci95_bits": [interval(boot[:, 0] - boot[:, j])
-                                         for j in range(len(point))]}
 
 
 def run_ticker(ticker: str, output: Path) -> dict:
@@ -98,54 +81,13 @@ def run_ticker(ticker: str, output: Path) -> dict:
     print(f"{ticker}: {len(events.time_ns):,} events; anchors "
           + ", ".join(f"{s}={len(i):,}" for s, i in anchors.items()), flush=True)
 
-    losses = {name: np.empty((n_test, len(TAU_GRID))) for name in MODEL_NAMES}
-    naive_losses = {name: np.empty((n_test, len(TAU_GRID))) for name in MODEL_NAMES}
-    metadata = {name: {} for name in MODEL_NAMES}
-    scores = {name: {"accuracy": [], "mcc": []} for name in MODEL_NAMES}
-    naive_scores = {name: {"accuracy": [], "mcc": []} for name in MODEL_NAMES}
-    zero_logits = {}
-    validation_skill = {name: [] for name in MODEL_NAMES}
-    seed_spread = []
-
-    for j, tau in enumerate(TAU_GRID):
-        print(f"{ticker}: fitting tau={tau} events", flush=True)
-        for name in MODEL_NAMES:
-            seeds = SEEDS if name == "hgb" else (0,)
-            fitted_metadata, current_losses, current_logits, current_scores = [], [], [], []
-            seed_skill = []
-            for seed in seeds:
-                model = fit_model(name, xs["train"], ys["train"][:, j],
-                                  xs["validation"], ys["validation"][:, j], seed)
-                logits = model.logits(xs["test"])
-                loss = logit_losses_bits(ys["test"][:, j], logits)
-                current_losses.append(loss)
-                current_logits.append(logits)
-                current_scores.append(classification_metrics(ys["test"][:, j], logits))
-                fitted_metadata.append(model.metadata())
-                seed_skill.append(float(entropy[j] - loss.mean()))
-            losses[name][:, j] = np.mean(current_losses, axis=0)
-            metadata[name][str(tau)] = fitted_metadata
-            validation_skill[name].append(float(np.mean([
-                m["validation_skill_bits"] for m in fitted_metadata])))
-            for metric in ("accuracy", "mcc"):
-                scores[name][metric].append(float(np.mean([s[metric] for s in current_scores])))
-            if tau == 0:
-                zero_logits[name] = current_logits
-            old_losses = [logit_losses_bits(ys["test"][:, j], logits)
-                          for logits in zero_logits[name]]
-            naive_losses[name][:, j] = np.mean(old_losses, axis=0)
-            old_scores = [classification_metrics(ys["test"][:, j], logits)
-                          for logits in zero_logits[name]]
-            for metric in ("accuracy", "mcc"):
-                naive_scores[name][metric].append(float(np.mean([s[metric] for s in old_scores])))
-            if name == "hgb":
-                seed_spread.append({"tau_events": int(tau), "S_bits_by_seed": seed_skill,
-                                    "S_min_max_bits": [min(seed_skill), max(seed_skill)],
-                                    "S_std_bits": float(np.std(seed_skill)),
-                                    "accuracy_by_seed": [s["accuracy"] for s in current_scores],
-                                    "mcc_by_seed": [s["mcc"] for s in current_scores],
-                                    "naive_S_bits_by_seed": [float(entropy[j] - l.mean())
-                                                             for l in old_losses]})
+    fitted = fit_grid(xs, ys, progress=lambda tau: print(
+        f"{ticker}: fitting tau={tau} events", flush=True))
+    evaluated = fitted["evaluation"]["test"]
+    losses, naive_losses = evaluated["losses"], evaluated["naive_losses"]
+    scores, naive_scores = evaluated["scores"], evaluated["naive_scores"]
+    metadata, validation_skill = fitted["fit_metadata"], fitted["validation_skill"]
+    seed_spread = evaluated["seed_spread"]
 
     test_times = events.time_ns[anchors["test"]]
     left, right = moving_time_blocks(test_times)
