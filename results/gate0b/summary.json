@@ -1,0 +1,363 @@
+{
+  "run_kind": "real_days_subsampled",
+  "symbols": [
+    "NVDA",
+    "CSCO",
+    "TSLA",
+    "GOOGL"
+  ],
+  "test_days": {
+    "2025-12-12": {
+      "verdict": "PASS",
+      "significant_symbols": 4,
+      "required_significant_symbols": 2,
+      "primary": {
+        "NVDA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.07907730486386166,
+            "ofi_logit": 0.09642751859644838,
+            "hgb": 0.1253050265871276
+          },
+          "delta_bits": 0.07179138757109987,
+          "delta_ci95_bits": [
+            0.0659755265303172,
+            0.07640360237305759
+          ],
+          "ci_excludes_zero": true
+        },
+        "CSCO": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.06838304328399192,
+            "ofi_logit": 0.08673508331277402,
+            "hgb": 0.09881131820932923
+          },
+          "delta_bits": 0.04516616535193849,
+          "delta_ci95_bits": [
+            0.04273403748763362,
+            0.04708134054554055
+          ],
+          "ci_excludes_zero": true
+        },
+        "TSLA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.03788065239635585,
+            "ofi_logit": 0.07315974525351432,
+            "hgb": 0.10108983668921127
+          },
+          "delta_bits": 0.05730791433451548,
+          "delta_ci95_bits": [
+            0.053523442797022425,
+            0.06069602542528079
+          ],
+          "ci_excludes_zero": true
+        },
+        "GOOGL": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.027044304527673257,
+            "ofi_logit": 0.055631107695446214,
+            "hgb": 0.07911755774046922
+          },
+          "delta_bits": 0.05670194011527544,
+          "delta_ci95_bits": [
+            0.05416218406665599,
+            0.05928632129440728
+          ],
+          "ci_excludes_zero": true
+        }
+      },
+      "sensitivity_5min": {
+        "NVDA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.07907730486386166,
+            "ofi_logit": 0.09642751859644838,
+            "hgb": 0.1253050265871276
+          },
+          "delta_bits": 0.07179138757109987,
+          "delta_ci95_bits": [
+            0.06691231317940893,
+            0.07223867980641828
+          ],
+          "ci_excludes_zero": true
+        },
+        "CSCO": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.06838304328399192,
+            "ofi_logit": 0.08673508331277402,
+            "hgb": 0.09881131820932923
+          },
+          "delta_bits": 0.04516616535193849,
+          "delta_ci95_bits": [
+            0.0427839067067482,
+            0.04812485996264988
+          ],
+          "ci_excludes_zero": true
+        },
+        "TSLA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.03788065239635585,
+            "ofi_logit": 0.07315974525351432,
+            "hgb": 0.10108983668921127
+          },
+          "delta_bits": 0.05730791433451548,
+          "delta_ci95_bits": [
+            0.05641103451965614,
+            0.060570155521437664
+          ],
+          "ci_excludes_zero": true
+        },
+        "GOOGL": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.027044304527673257,
+            "ofi_logit": 0.055631107695446214,
+            "hgb": 0.07911755774046922
+          },
+          "delta_bits": 0.05670194011527544,
+          "delta_ci95_bits": [
+            0.05576428364174909,
+            0.05930185007976098
+          ],
+          "ci_excludes_zero": true
+        }
+      }
+    },
+    "2026-06-12": {
+      "verdict": "PASS",
+      "significant_symbols": 4,
+      "required_significant_symbols": 2,
+      "primary": {
+        "NVDA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.07907730486386166,
+            "ofi_logit": 0.09642751859644838,
+            "hgb": 0.1253050265871276
+          },
+          "delta_bits": 0.039040646129503934,
+          "delta_ci95_bits": [
+            0.03622261842094635,
+            0.04019749972029733
+          ],
+          "ci_excludes_zero": true
+        },
+        "CSCO": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.06838304328399192,
+            "ofi_logit": 0.08673508331277402,
+            "hgb": 0.09881131820932923
+          },
+          "delta_bits": 0.011008392438827265,
+          "delta_ci95_bits": [
+            0.004810030984810994,
+            0.01572081603415952
+          ],
+          "ci_excludes_zero": true
+        },
+        "TSLA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.03788065239635585,
+            "ofi_logit": 0.07315974525351432,
+            "hgb": 0.10108983668921127
+          },
+          "delta_bits": 0.0141161288833654,
+          "delta_ci95_bits": [
+            0.010911380009598372,
+            0.01844184696324607
+          ],
+          "ci_excludes_zero": true
+        },
+        "GOOGL": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.027044304527673257,
+            "ofi_logit": 0.055631107695446214,
+            "hgb": 0.07911755774046922
+          },
+          "delta_bits": 0.023564299886145345,
+          "delta_ci95_bits": [
+            0.020973059744601653,
+            0.02547740733562826
+          ],
+          "ci_excludes_zero": true
+        }
+      },
+      "sensitivity_5min": {
+        "NVDA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.07907730486386166,
+            "ofi_logit": 0.09642751859644838,
+            "hgb": 0.1253050265871276
+          },
+          "delta_bits": 0.039040646129503934,
+          "delta_ci95_bits": [
+            0.035727047594680414,
+            0.04099758279158532
+          ],
+          "ci_excludes_zero": true
+        },
+        "CSCO": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.06838304328399192,
+            "ofi_logit": 0.08673508331277402,
+            "hgb": 0.09881131820932923
+          },
+          "delta_bits": 0.011008392438827265,
+          "delta_ci95_bits": [
+            0.005227049065868416,
+            0.011969153577277703
+          ],
+          "ci_excludes_zero": true
+        },
+        "TSLA": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.03788065239635585,
+            "ofi_logit": 0.07315974525351432,
+            "hgb": 0.10108983668921127
+          },
+          "delta_bits": 0.0141161288833654,
+          "delta_ci95_bits": [
+            0.012405392093157153,
+            0.016509363482744836
+          ],
+          "ci_excludes_zero": true
+        },
+        "GOOGL": {
+          "best_model": "hgb",
+          "validation_S0_bits": {
+            "qi_logit": 0.027044304527673257,
+            "ofi_logit": 0.055631107695446214,
+            "hgb": 0.07911755774046922
+          },
+          "delta_bits": 0.023564299886145345,
+          "delta_ci95_bits": [
+            0.021433783365885115,
+            0.025146696602399262
+          ],
+          "ci_excludes_zero": true
+        }
+      }
+    }
+  },
+  "historical_gate0": {
+    "verdict": "PASS",
+    "significant_tickers": 5,
+    "required_significant_tickers": 2,
+    "required_tickers": [
+      "AAPL",
+      "AMZN",
+      "GOOG",
+      "INTC",
+      "MSFT"
+    ],
+    "completed_tickers": [
+      "AAPL",
+      "AMZN",
+      "GOOG",
+      "INTC",
+      "MSFT"
+    ],
+    "primary": {
+      "AAPL": {
+        "best_model": "hgb",
+        "validation_S0_bits": {
+          "qi_logit": 0.012243721870983215,
+          "ofi_logit": 0.03212899360036414,
+          "hgb": 0.03397970577565594
+        },
+        "delta_bits": 0.008130373214279889,
+        "delta_ci95_bits": [
+          0.006806000560621302,
+          0.01052442349658353
+        ],
+        "ci_excludes_zero": true
+      },
+      "AMZN": {
+        "best_model": "ofi_logit",
+        "validation_S0_bits": {
+          "qi_logit": 0.015667373020559205,
+          "ofi_logit": 0.04251437899827559,
+          "hgb": 0.03715993619310021
+        },
+        "delta_bits": 0.004663458226999692,
+        "delta_ci95_bits": [
+          0.0020655543341899616,
+          0.0069391471658048895
+        ],
+        "ci_excludes_zero": true
+      },
+      "GOOG": {
+        "best_model": "hgb",
+        "validation_S0_bits": {
+          "qi_logit": 0.010859959381530615,
+          "ofi_logit": 0.0363714056329818,
+          "hgb": 0.04491108837098001
+        },
+        "delta_bits": 0.007305961793632285,
+        "delta_ci95_bits": [
+          0.0019941820046019804,
+          0.008575612842936372
+        ],
+        "ci_excludes_zero": true
+      },
+      "INTC": {
+        "best_model": "qi_logit",
+        "validation_S0_bits": {
+          "qi_logit": 0.07435385718283538,
+          "ofi_logit": 0.06870817138933605,
+          "hgb": 0.06526930637098131
+        },
+        "delta_bits": 0.012914621620728955,
+        "delta_ci95_bits": [
+          0.0084872117082769,
+          0.020437029043059652
+        ],
+        "ci_excludes_zero": true
+      },
+      "MSFT": {
+        "best_model": "hgb",
+        "validation_S0_bits": {
+          "qi_logit": 0.08764385244755968,
+          "ofi_logit": 0.09842536188399276,
+          "hgb": 0.10538812694854931
+        },
+        "delta_bits": 0.030076611031128297,
+        "delta_ci95_bits": [
+          0.023695139170256358,
+          0.03737567485671913
+        ],
+        "ci_excludes_zero": true
+      }
+    }
+  },
+  "full_run_command": "MPLCONFIGDIR=.cache/mpl OMP_NUM_THREADS=1 .venv/bin/python scripts/symbol_stats.py --input data/raw/itch_lobster --out results/itch && .venv/bin/python scripts/select_assets.py && MPLCONFIGDIR=.cache/mpl OMP_NUM_THREADS=1 .venv/bin/python scripts/run_gate0b.py --data-root data/raw/itch_lobster --assets results/itch/selected_assets.json --output results/gate0b --report docs/gate0b_report.md",
+  "assumptions": [
+    "Input timestamps are exchange-local seconds after midnight, with exact decimal parsing and equal-timestamp merging as in Gate 0.",
+    "Each day is trimmed before features, labels and counts; the preceding-book OFI guard and common valid labels apply. Complete maximum-latency windows are required through the last observed event.",
+    "Training days are pooled by anchor count for feature statistics, class priors and fitting; validation alone selects iterations, temperatures and the best model.",
+    "Out-of-time scores reuse the same fitted models, temperatures, training priors and feature scales without refitting or reselection.",
+    "Asset selection uses equal-day averaged event rates and event-mean spreads; per-day quality exclusions use trimmed-session time fractions. Missing integrity evidence is excluded. Ties use ascending symbol order, and picks must be distinct.",
+    "The symbol-statistics producer was extended to fix missing event-rate and integrity fields required by selection; unknown references come from reconstruction manifests or integrity JSON, never assumed zero.",
+    "HGB metrics average individual calibrated seed losses and classification metrics, rather than probability-ensemble scores. Naive scoring freezes the zero-delay model and temperature.",
+    "Bootstrap blocks start uniformly at eligible anchors, retain variable event counts and use the same draws for all losses, distributions, differences and diagnostics within each day. Fits and training priors stay fixed.",
+    "Within-day blocks understate day-to-day variation; these intervals do not include training, calibration or asset-selection uncertainty.",
+    "Latency mixtures interpolate event-delay skills and hold the last grid value beyond the grid; burst dependence can violate this approximation. Direct checks use matching surviving anchors.",
+    "Half-life uses equal-weight non-increasing isotonic skill clipped at zero as a surrogate, with first-crossing interpolation. Censored bootstrap crossings retain unbounded endpoints; crossing intervals condition on positive initial skill and report unidentified mass.",
+    "Fractional half-life event indices interpolate adjacent timestamps; median and IQR describe elapsed times across the common test anchors, rather than a confidence interval for clock conversion.",
+    "Latencies are assumed scenarios; inference timing, quantization, FPGA behavior and profitability are unverified. Tables name the planned reference hardware, whose timing is unmeasured.",
+    "The prescribed gate accepts an interval excluding zero in either direction, without an added multiple-comparison correction; a negative Delta is not evidence of a latency penalty.",
+    "Synthetic dates repeat historical sample streams and reduced fixture settings; their verdicts exercise code and provide no evidence of modern-market or across-day generalization.",
+    "The later full-run command assumes complete converter output under data/raw/itch_lobster and regeneration of statistics before selection. Real-day results remain unverified until that command runs."
+  ]
+}
