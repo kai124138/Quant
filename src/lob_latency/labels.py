@@ -1,10 +1,16 @@
 """First future mid-price change labels and split-safe anchors, in events/ns."""
 
+import os
+
 import numpy as np
 
 SPLITS = {"train": (35_100, 48_600), "validation": (48_600, 52_800),
           "test": (52_800, 57_000)}
-TAU_GRID = np.array([0, 1, 2, 4, 8, 16, 32, 64], dtype=np.int64)
+# Delays in events. LOB_TAU_GRID (comma-separated) extends the grid for fast symbols
+# whose millisecond latencies span more than 64 events; the default is the Gate 0 grid.
+TAU_GRID = np.array([int(tau) for tau in
+                     os.environ.get("LOB_TAU_GRID", "0,1,2,4,8,16,32,64").split(",")],
+                    dtype=np.int64)
 
 
 def next_move(mid: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -41,7 +47,7 @@ def delayed_labels(next_dir: np.ndarray, anchors: np.ndarray,
 
 def select_anchors(time_ns: np.ndarray, next_end: np.ndarray,
                    feature_valid: np.ndarray, lookback: int = 50,
-                   max_tau: int = 64,
+                   max_tau: int = int(TAU_GRID[-1]),
                    splits: dict = SPLITS) -> dict[str, np.ndarray]:
     """Require the input and max-delay label to stay within each time split.
 

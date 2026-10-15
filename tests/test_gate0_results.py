@@ -135,7 +135,8 @@ def test_completed_gate_verdict_and_source_manifest():
     assert summary["verdict"] == ("PASS" if significant >= 2 else "FAIL")
     for relative, expected in manifest["source_sha256"].items():
         source = (ROOT / relative).read_bytes()
-        if relative in ("src/lob_latency/io_lobster.py", "scripts/run_gate0.py"):
+        if relative in ("src/lob_latency/io_lobster.py", "scripts/run_gate0.py",
+                        "src/lob_latency/labels.py"):
             # Preserve the recorded historical sources. Parquet loading and the
             # shared Gate fitter are tested separately, including a numeric
             # replay against the frozen Gate 0 metrics, without rewriting them.
