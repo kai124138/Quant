@@ -274,7 +274,10 @@ def write_reports(results: list[dict], manifest: dict, args: argparse.Namespace)
     title = "Gate 0b synthetic integration report" if args.fake_data else "Gate 0b report"
     lines = [f"# {title}", "", f"Run kind: **{manifest['run_kind']}**.", "",
              "The real-day Gate 0b result is unverified until the later full run." if args.fake_data else
-             "Both held-out days use the same training and validation fits.", "",
+             "Both held-out days use the same training and validation fits." +
+             (f" Anchors are evenly subsampled to at most {args.max_anchors_per_day} per day;"
+              " the event clock, features, labels and latency counts use every event."
+              if args.max_anchors_per_day else ""), "",
              "## Commands and evidence", "", "Executed pipeline command:", "", "```sh", manifest["command"], "```", "",
              "Evidence: manifest.json, summary.json, per-symbol metrics.json and bootstrap artifacts under " + str(args.output.relative_to(ROOT) if args.output.is_relative_to(ROOT) else args.output) + ".",
              "All reported values below come from those result JSON files; bootstrap intervals condition on fixed fits.", "",
@@ -342,8 +345,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.resamples < 2 or len(set(args.hgb_seeds)) != len(args.hgb_seeds) or min(args.hgb_seeds) < 0:
         parser.error("Need at least two resamples and distinct nonnegative HGB seeds")
-    if args.max_anchors_per_day is not None and (not args.fake_data or args.max_anchors_per_day < 2):
-        parser.error("Anchor reduction requires --fake-data and at least two anchors")
+    if args.max_anchors_per_day is not None and args.max_anchors_per_day < 2:
+        parser.error("Anchor reduction requires at least two anchors per day")
     args.data_root, args.output, args.report = (path.resolve() for path in (args.data_root, args.output, args.report))
     if args.output == ROOT / "results/gate0" or (ROOT / "results/gate0") in args.output.parents:
         parser.error("Gate 0 results are protected")
@@ -365,7 +368,8 @@ def main() -> None:
             (args.output / name).unlink(missing_ok=True)
         manifest = {
             "started_utc": datetime.now(timezone.utc).isoformat(), "status": "running",
-            "run_kind": "synthetic_fixture" if args.fake_data else "real_days",
+            "run_kind": ("synthetic_fixture" if args.fake_data else
+                         "real_days_subsampled" if args.max_anchors_per_day else "real_days"),
             "command": "MPLCONFIGDIR=.cache/mpl OMP_NUM_THREADS=1 .venv/bin/python " + shlex.join(["scripts/run_gate0b.py", *sys.argv[1:]]),
             "full_run_command": FULL_COMMAND, "hardware": platform.platform() + " / " + platform.machine(),
             "reference_hardware": REFERENCE_HARDWARE, "python": sys.version,
